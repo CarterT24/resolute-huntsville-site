@@ -84,7 +84,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           </div>
           <div className="space-y-1 text-left md:text-right">
             <p>Huntsville, Alabama</p>
-            <p>resolutehomesllc@gmail.com</p>
+            <p>resolutehomeshsv@gmail.com</p>
             <p>(256) 384-5652</p>
           </div>
         </div>

@@ -117,7 +117,7 @@ export default function ContactPage() {
               <div className="mt-5 space-y-3">
                 <div className="rounded-2xl border border-[#eadfce] bg-white px-5 py-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8c6a43]">Email</p>
-                  <p className="mt-1.5 text-sm text-[#1f1a17] font-medium">resolutehomesllc@gmail.com</p>
+                  <p className="mt-1.5 text-sm text-[#1f1a17] font-medium">resolutehomeshsv@gmail.com</p>
                 </div>
                 <div className="rounded-2xl border border-[#eadfce] bg-white px-5 py-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8c6a43]">Phone</p>

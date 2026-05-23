@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
     },
     body: JSON.stringify({
       from: "Resolute Homes Contact Form <onboarding@resend.dev>",
-      to: ["resolutehomesllc@gmail.com"],
+      to: ["resolutehomeshsv@gmail.com"],
       reply_to: email,
       subject: `New consultation request from ${name}`,
       html: `
