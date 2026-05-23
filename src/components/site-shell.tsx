@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 
 const navItems = [
   { href: "/custom-homes", label: "Custom Homes" },
@@ -12,11 +14,13 @@ const navItems = [
 ];
 
 export function SiteShell({ children }: { children: ReactNode }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-[#f6f1e8] text-[#1f1a17]">
       <header className="sticky top-0 z-20 border-b border-black/5 bg-[#f8f3eb]/90 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
-          <Link href="/" className="block">
+          <Link href="/" className="block" onClick={() => setMenuOpen(false)}>
             <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[#8c6a43]">Resolute Homes</p>
             <p className="mt-1 text-sm text-[#6e6257]">Huntsville, Alabama</p>
           </Link>
@@ -27,13 +31,47 @@ export function SiteShell({ children }: { children: ReactNode }) {
               </Link>
             ))}
           </nav>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-full bg-[#1f1a17] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#342c27]"
-          >
-            Schedule a Consultation
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link
+              href="/contact"
+              className="hidden lg:inline-flex items-center justify-center rounded-full bg-[#1f1a17] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#342c27]"
+            >
+              Schedule a Consultation
+            </Link>
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="flex lg:hidden flex-col justify-center items-center w-10 h-10 rounded-full bg-[#1f1a17] gap-1.5"
+              aria-label="Toggle menu"
+            >
+              <span className={`block w-4 h-0.5 bg-white transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+              <span className={`block w-4 h-0.5 bg-white transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+              <span className={`block w-4 h-0.5 bg-white transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            </button>
+          </div>
         </div>
+        {menuOpen && (
+          <div className="lg:hidden border-t border-black/5 bg-[#f8f3eb]">
+            <nav className="mx-auto max-w-7xl px-6 py-4 flex flex-col">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="py-3 text-sm font-medium text-[#1f1a17] border-b border-black/5 last:border-0 transition hover:text-[#8c6a43]"
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <Link
+                href="/contact"
+                onClick={() => setMenuOpen(false)}
+                className="mt-4 inline-flex items-center justify-center rounded-full bg-[#1f1a17] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#342c27]"
+              >
+                Schedule a Consultation
+              </Link>
+            </nav>
+          </div>
+        )}
       </header>
       {children}
       <footer className="border-t border-black/5 bg-[#f3ede3]">
