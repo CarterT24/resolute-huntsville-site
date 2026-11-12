@@ -33,3 +33,5 @@ export default function RemodelsPage() {
     </SiteShell>
   );
 }
+
+export const metadata = { title: "Home Remodels & Additions in Huntsville, AL", description: "Kitchen remodels, bathroom remodels, whole-home renovations, and additions in Huntsville and Madison." };

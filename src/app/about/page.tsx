@@ -49,3 +49,5 @@ export default function AboutPage() {
     </SiteShell>
   );
 }
+
+export const metadata = { title: "About", description: "Resolute Homes is a custom home builder and remodeler serving Huntsville, Alabama." };

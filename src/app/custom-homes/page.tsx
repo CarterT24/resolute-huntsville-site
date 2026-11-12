@@ -63,3 +63,5 @@ export default function CustomHomesPage() {
     </SiteShell>
   );
 }
+
+export const metadata = { title: "Custom Homes in Huntsville, AL", description: "Custom homes designed and built around the way you live, in Huntsville, Madison, and North Alabama." };

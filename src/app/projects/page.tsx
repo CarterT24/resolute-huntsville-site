@@ -52,3 +52,5 @@ export default function ProjectsPage() {
     </SiteShell>
   );
 }
+
+export const metadata = { title: "Projects", description: "Custom homes and remodels built by Resolute Homes." };

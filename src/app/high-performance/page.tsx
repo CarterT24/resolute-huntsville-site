@@ -30,3 +30,5 @@ export default function HighPerformancePage() {
     </SiteShell>
   );
 }
+
+export const metadata = { title: "High-Performance Home Building", description: "Better air sealing, insulation, and moisture control for homes that are more comfortable, durable, and efficient." };

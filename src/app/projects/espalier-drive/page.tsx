@@ -58,3 +58,5 @@ export default function EspalierDrivePage() {
     </SiteShell>
   );
 }
+
+export const metadata = { title: "Espalier Drive Project", description: "A custom home by Resolute Homes: exterior, kitchen, and bath photos." };

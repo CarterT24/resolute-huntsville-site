@@ -29,3 +29,5 @@ export default function ProcessPage() {
     </SiteShell>
   );
 }
+
+export const metadata = { title: "Our Building Process", description: "How Resolute Homes takes a project from discovery and planning through build and delivery." };
